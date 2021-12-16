@@ -19,6 +19,7 @@ package com.example.android.kotlincoroutines.main
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import com.example.android.kotlincoroutines.util.BACKGROUND
+import kotlinx.coroutines.delay
 
 /**
  * TitleRepository provides an interface to fetch a title or request a new one be generated.
@@ -72,6 +73,11 @@ class TitleRepository(val network: MainNetwork, val titleDao: TitleDao) {
                         TitleRefreshError("Unable to refresh title", cause))
             }
         }
+    }
+
+    suspend fun refreshTitle() {
+        // TODO: Refresh from network and write to database
+        delay(500)
     }
 }
 
