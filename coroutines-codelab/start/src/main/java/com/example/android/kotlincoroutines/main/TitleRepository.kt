@@ -18,10 +18,6 @@ package com.example.android.kotlincoroutines.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
-import com.example.android.kotlincoroutines.util.BACKGROUND
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
 
 /**
  * TitleRepository provides an interface to fetch a title or request a new one be generated.
@@ -38,9 +34,7 @@ class TitleRepository(val network: MainNetwork, val titleDao: TitleDao) {
      *
      * This is the main interface for loading a title. The title will be loaded from the offline
      * cache.
-     *
-     * Observing this will not cause the title to be refreshed, use [TitleRepository.refreshTitleWithCallbacks]
-     * to refresh the title.
+
      */
     val title: LiveData<String?> = titleDao.titleLiveData.map { it?.title }
 
@@ -115,8 +109,3 @@ class TitleRepository(val network: MainNetwork, val titleDao: TitleDao) {
  * @property cause the original cause of this exception
  */
 class TitleRefreshError(message: String, cause: Throwable?) : Throwable(message, cause)
-
-interface TitleRefreshCallback {
-    fun onCompleted()
-    fun onError(cause: Throwable)
-}
