@@ -1,4 +1,4 @@
-package com.example.android.advancedcoroutines.ui
+package com.example.android.advancedcoroutines.presenter.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

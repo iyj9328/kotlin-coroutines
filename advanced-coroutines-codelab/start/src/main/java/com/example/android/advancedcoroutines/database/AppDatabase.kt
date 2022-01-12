@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.android.advancedcoroutines.utils
+package com.example.android.advancedcoroutines.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.android.advancedcoroutines.Plant
-import com.example.android.advancedcoroutines.PlantDao
 
 /**
  * The Room database for this app

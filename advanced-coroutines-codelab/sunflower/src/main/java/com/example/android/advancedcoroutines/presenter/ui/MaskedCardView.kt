@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.advancedcoroutines.ui
+package com.example.android.advancedcoroutines.presenter.ui
 
 import android.content.Context
 import android.graphics.Canvas

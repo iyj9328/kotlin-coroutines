@@ -24,7 +24,7 @@
             type="com.example.android.advancedcoroutines.Plant"/>
     </data>
 
-    <com.example.android.advancedcoroutines.ui.MaskedCardView
+    <com.example.android.advancedcoroutines.presenter.ui.MaskedCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/card_side_margin"
@@ -66,6 +66,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.example.android.advancedcoroutines.ui.MaskedCardView>
+    </com.example.android.advancedcoroutines.presenter.ui.MaskedCardView>
 
 </layout>

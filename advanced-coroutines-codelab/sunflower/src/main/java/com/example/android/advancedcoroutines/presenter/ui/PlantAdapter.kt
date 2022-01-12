@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.advancedcoroutines.ui
+package com.example.android.advancedcoroutines.presenter.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +23,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.advancedcoroutines.Plant
-import com.example.android.advancedcoroutines.ui.databinding.ListItemPlantBinding
+import com.example.android.advancedcoroutines.presenter.ui.databinding.ListItemPlantBinding
 
 /**
  * Adapter for the [RecyclerView] in [PlantListFragment].

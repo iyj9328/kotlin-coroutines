@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-package com.example.android.advancedcoroutines
+package com.example.android.advancedcoroutines.presenter
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
+import com.example.android.advancedcoroutines.GrowZone
+import com.example.android.advancedcoroutines.NoGrowZone
+import com.example.android.advancedcoroutines.Plant
+import com.example.android.advancedcoroutines.data.repository.PlantRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
