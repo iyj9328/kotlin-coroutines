@@ -7,7 +7,7 @@ buildscript {
 
         // global variables
         compile_sdk_version = 29
-        kotlin_version = '1.4.21'
+        kotlin_version = '1.5.21'
         min_sdk_version = 21
 
         // local variables (use def)
@@ -28,6 +28,7 @@ buildscript {
         def room_version = '2.2.1'
         def truth_version = '1.0'
         def work_version = '2.2.0'
+        def hilt_version = '2.3.6'
 
         libraries = [
                 // Kotlin standard library
@@ -36,6 +37,10 @@ buildscript {
                 // Coroutines
                 "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_android_version",
                 "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutines_android_version}",
+
+                //Hilt
+                "com.google.dagger:hilt-android:$hilt_version",
+
 
                 // Android UI and appcompat
                 "androidx.appcompat:appcompat:$appcompat_version",
@@ -69,7 +74,8 @@ buildscript {
 
         librariesKapt = [
                 "androidx.room:room-compiler:$room_version",
-                "com.github.bumptech.glide:compiler:$glide_version"
+                "com.github.bumptech.glide:compiler:$glide_version",
+                "com.google.dagger:hilt-android-compiler:$hilt_version"
         ]
 
         testLibraries = [
@@ -110,6 +116,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.36'
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
