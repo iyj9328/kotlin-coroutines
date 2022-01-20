@@ -25,13 +25,17 @@ import com.example.android.advancedcoroutines.GrowZone
 import com.example.android.advancedcoroutines.NoGrowZone
 import com.example.android.advancedcoroutines.Plant
 import com.example.android.advancedcoroutines.data.repository.PlantRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * The [ViewModel] for fetching a list of [Plant]s.
  */
-class PlantListViewModel internal constructor(
+
+@HiltViewModel
+class PlantListViewModel @Inject constructor(
     private val plantRepository: PlantRepository
 ) : ViewModel() {
 
@@ -68,7 +72,7 @@ class PlantListViewModel internal constructor(
      */
     val plants: LiveData<List<Plant>> = growZone.switchMap { growZone ->
         if (growZone == NoGrowZone) {
-            plantRepository.plants
+            plantRepository.getPlants()
         } else {
             plantRepository.getPlantsWithGrowZone(growZone)
         }

@@ -25,27 +25,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
-import com.example.android.advancedcoroutines.data.repository.PlantRepository
 import com.example.android.advancedcoroutines.R
 import com.example.android.advancedcoroutines.databinding.FragmentPlantListBinding
 import com.example.android.advancedcoroutines.presenter.ui.PlantAdapter
-import com.example.android.advancedcoroutines.utils.Injector
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PlantListFragment : Fragment() {
 
-    private val viewModel: PlantListViewModel by viewModels {
-        Injector.providePlantListViewModelFactory(requireContext())
-    }
+    private val viewModel : PlantListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentPlantListBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
@@ -99,15 +95,4 @@ class PlantListFragment : Fragment() {
             }
         }
     }
-}
-
-/**
- * Factory for creating a [PlantListViewModel] with a constructor that takes a [PlantRepository].
- */
-class PlantListViewModelFactory(
-    private val repository: PlantRepository
-) : ViewModelProvider.NewInstanceFactory() {
-
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>) = PlantListViewModel(repository) as T
 }

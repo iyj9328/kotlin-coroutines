@@ -1,4 +1,4 @@
-package com.example.android.advancedcoroutines.utils
+package com.example.android.advancedcoroutines.domain.model
 
 sealed class NetworkResult<out T>
 
